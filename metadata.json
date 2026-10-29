@@ -1,0 +1,6 @@
+{
+  "name": "Garagem Grau Car 096 - BioSite & Agendamento",
+  "description": "BioSite de Agendamentos e Estética Automotiva de alto padrão para Garagem Grau Car 096 em Macapá - AP. Lavagem detalhada, higienização, polimento e vitrificação.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
