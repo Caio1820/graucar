@@ -124,10 +124,44 @@ npm run dev
 # 3. Executar checagem de tipos e lint
 npm run lint
 
-# 4. Executar build de produção
+# 4. Executar suíte de testes automatizados
+npm run test
+
+# 5. Executar build de produção
 npm run build
 ```
 
 ---
 
+## ⚡ 7. Como Fazer Deploy na Vercel
+
+O projeto está 100% configurado e pronto para deploy contínuo na **Vercel** através do arquivo `vercel.json` incluso na raiz.
+
+### Método A: Deploy via GitHub (Recomendado)
+1. Crie ou conecte o repositório no seu GitHub.
+2. Acesse [vercel.com/new](https://vercel.com/new) e importe o repositório.
+3. As configurações serão detectadas automaticamente:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Clique em **Deploy**! A cada novo Pull Request aprovado e mesclado na branch `main`, a Vercel gerará o deploy de produção instantaneamente com preview em branches temáticas.
+
+### Método B: Deploy via Vercel CLI
+```bash
+# Instalar a CLI da Vercel globalmente
+npm i -g vercel
+
+# Executar deploy em produção
+vercel --prod
+```
+
+### Configurações Ativas na Vercel (`vercel.json`)
+- **SPA Rewrites**: Redirecionamento de todas as rotas para `/index.html` mantendo o histórico do navegador.
+- **Cache-Control Imutável**: Headers de cache de 1 ano para arquivos estáticos em `/assets/*` garantindo carregamento instantâneo.
+- **Security Headers**: `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN` e `X-XSS-Protection`.
+- **Assets Públicos**: A logo oficial `grau_car_logo.jpg` e ícones são servidos estaticamente via CDN de baixa latência.
+
+---
+
 *Desenvolvido com excelência técnica para Garagem Grau Car 096 — Macapá / AP.*
+

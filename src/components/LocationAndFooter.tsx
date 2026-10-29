@@ -50,8 +50,17 @@ export const LocationAndFooter: React.FC = () => {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs border-b border-zinc-800/80 pb-8">
           {/* Brand info */}
           <div className="space-y-3">
-            <div className="font-bold text-base text-white tracking-tight font-display">
-              {BUSINESS_INFO.name}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-black border border-red-500/40 p-1 flex items-center justify-center shrink-0">
+                <img
+                  src={BUSINESS_INFO.avatarImage}
+                  alt="Grau Car 096"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="font-bold text-base text-white tracking-tight font-display">
+                {BUSINESS_INFO.name}
+              </div>
             </div>
             <p className="text-zinc-400 leading-relaxed">
               Estética automotiva especializada em revitalização, polimento técnico, vitrificação cerâmica e higienização profunda em Macapá - Amapá.

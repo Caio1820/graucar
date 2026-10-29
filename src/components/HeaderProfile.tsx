@@ -48,17 +48,24 @@ export const HeaderProfile: React.FC = () => {
         <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-b from-red-500 via-zinc-800 to-red-600 shadow-2xl">
           <div className="w-full h-full rounded-full overflow-hidden bg-black flex items-center justify-center relative">
             {!imageLoaded && (
-              <div className="absolute inset-0 bg-zinc-900 animate-pulse flex items-center justify-center">
+              <div className="absolute inset-0 bg-black animate-pulse flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-red-500 animate-spin" />
               </div>
             )}
             <img
               src={BUSINESS_INFO.avatarImage}
               alt="Garagem Grau Car 096 - Logo Oficial"
-              className={`w-full h-full object-cover transition-opacity duration-300 ${
+              className={`w-full h-full object-contain p-2 bg-black transition-opacity duration-300 ${
                 imageLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={() => setImageLoaded(true)}
+              onError={(e) => {
+                // If local path fails, switch to remote CDN fallback
+                const target = e.currentTarget;
+                if (target.src !== BUSINESS_INFO.avatarImageFallback) {
+                  target.src = BUSINESS_INFO.avatarImageFallback;
+                }
+              }}
               loading="eager"
             />
           </div>

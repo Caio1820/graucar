@@ -13,7 +13,8 @@ export const BUSINESS_INFO = {
   cityState: 'Macapá - AP',
   mapsUrl: 'https://maps.google.com/?q=Av.+Coraci+Nunes,+907+B+–+Centro,+Macapa+-+AP',
   openingHours: 'Segunda a Sexta: 08h às 18h | Sábado: 08h às 14h',
-  avatarImage: '/src/assets/images/grau_car_logo_avatar_1793276315494.jpg',
+  avatarImage: '/grau_car_logo.jpg',
+  avatarImageFallback: 'https://i.postimg.cc/Bnmmfs99/565846003-17842369584598888-3828931011414008565-n.jpg',
   heroImage: '/src/assets/images/detailing_polishing_paint_1793276328521.jpg',
 };
 
